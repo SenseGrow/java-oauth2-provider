@@ -1,22 +1,22 @@
-package oAuth2Provider;
+package com.sensegrow.oauth2.dao;
 
-import models.AccessToken;
-import models.App;
-import models.AuthInfo;
+import com.sensegrow.oauth2.models.AccessToken;
+import com.sensegrow.oauth2.models.ClientCredential;
+import com.sensegrow.oauth2.models.AuthorizationCode;
 
-public interface Oauth2DataHandler {
+public interface IDataHandler {
 
 	public boolean validateClient(String clientId, String clientSecret,
 			String grantType);
 
-	public abstract AuthInfo createOrUpdateAuthInfo(String clientId,
+	public abstract AuthorizationCode createOrUpdateAuthInfo(String clientId,
 			Long userId, String scope);
 
-	public abstract AccessToken createOrUpdateAccessToken(AuthInfo authInfo);
+	public abstract AccessToken createOrUpdateAccessToken(AuthorizationCode authInfo);
 
-	public abstract AuthInfo getAuthInfoByCode(String code);
+	public abstract AuthorizationCode getAuthInfoByCode(String code);
 
-	public abstract AuthInfo getAuthInfoByRefreshToken(String refreshToken);
+	public abstract AuthorizationCode getAuthInfoByRefreshToken(String refreshToken);
 
 	public abstract String getClientUserId(String clientId, String clientSecret);
 
@@ -25,10 +25,11 @@ public interface Oauth2DataHandler {
 	public abstract boolean validateApp(String clientId, String clientSecret,
 			String grantType);
 
-	public abstract App findAppByClientId(String clientId);
+	public abstract ClientCredential findAppByClientId(String clientId);
 
-	public abstract App findAppByClientIdAndClientSecret(String clientId,
+	public abstract ClientCredential findAppByClientIdAndClientSecret(String clientId,
 			String clientSecret);
+	public abstract String getClientGrantType(String clientId);
 
 	/**
 	 * Validate the user specified by the user ID. This method is used to check
@@ -70,6 +71,6 @@ public interface Oauth2DataHandler {
 	 *            The ID to specify the authorization information.
 	 * @return The object which has the information about the authorization.
 	 */
-	public abstract AuthInfo getAuthInfoById(String id);
+	public abstract AuthorizationCode getAuthInfoById(String id);
 
 }
