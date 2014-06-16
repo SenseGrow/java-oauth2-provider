@@ -1,5 +1,5 @@
 package com.sensegrow.oauth2.response;
 
-public class AuthorizationCode {
+public class InvalidTokenResponse {
 
 }

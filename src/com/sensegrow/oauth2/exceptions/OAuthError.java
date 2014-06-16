@@ -4,12 +4,11 @@ package com.sensegrow.oauth2.exceptions;
 * This abstract class represents an OAuth error information.
 * Actually, each error should be represented by creating this sub class.
 * 
-* @author Yoichiro Tanaka
 *
 */
 
 
-public abstract class OauthError extends Exception {
+public abstract class OAuthError extends Exception {
 
 	private int code;
 
@@ -22,7 +21,7 @@ public abstract class OauthError extends Exception {
 	 * @param description The human-readable string which describes the detail
 	 * information regarding the error.
 	 */
-	protected OauthError(int code, String description) {
+	protected OAuthError(int code, String description) {
 		super();
 		this.code = code;
 		this.description = description;
@@ -36,7 +35,7 @@ public abstract class OauthError extends Exception {
 	 * @param description The human-readable string which describes the detail
 	 * information regarding the error.
 	 */
-	protected OauthError(String description) {
+	protected OAuthError(String description) {
 		this(400, description);
 	}
 
@@ -72,10 +71,9 @@ public abstract class OauthError extends Exception {
 	 * This exception represents that the request is invalid.
 	 * For instance, this error type is "invalid_request".
 	 * 
-	 * @author Yoichiro Tanaka
 	 *
 	 */
-	public static class InvalidRequest extends OauthError {
+	public static class InvalidRequest extends OAuthError {
 
 		/**
 		 * Initialize this instance. The HTTP status code is set as 400.
@@ -100,10 +98,9 @@ public abstract class OauthError extends Exception {
 	 * This exception represents that the client is invalid.
 	 * For instance, this error type is "invalid_client".
 	 * 
-	 * @author Yoichiro Tanaka
-	 *
+	 	 *
 	 */
-	public static class InvalidClient extends OauthError {
+	public static class InvalidClient extends OAuthError {
 
 		/**
 		 * Initialize this instance. The HTTP status code is set as 401.
@@ -129,10 +126,9 @@ public abstract class OauthError extends Exception {
 	 * code using this method. For instance, this error type is
 	 * "unauthorized_client".
 	 * 
-	 * @author Yoichiro Tanaka
 	 *
 	 */
-	public static class UnauthorizedClient extends OauthError {
+	public static class UnauthorizedClient extends OAuthError {
 
 		/**
 		 * Initialize this instance. The HTTP status code is set as 401.
@@ -157,10 +153,9 @@ public abstract class OauthError extends Exception {
 	 * This means that the redirect_uri value does not match the value set in
 	 * advance. For instance, this error type is "redirect_uri_mismatch".
 	 * 
-	 * @author Yoichiro Tanaka
 	 *
 	 */
-	public static class RedirectUriMismatch extends OauthError {
+	public static class RedirectUriMismatch extends OAuthError {
 
 		/**
 		 * Initialize this instance. The HTTP status code is set as 401.
@@ -185,10 +180,9 @@ public abstract class OauthError extends Exception {
 	 * This means that the result is denied. For instance, this error type is
 	 * "access_denied".
 	 * 
-	 * @author Yoichiro Tanaka
 	 *
 	 */
-	public static class AccessDenied extends OauthError {
+	public static class AccessDenied extends OAuthError {
 
 		/**
 		 * Initialize this instance. The HTTP status code is set as 401.
@@ -214,10 +208,9 @@ public abstract class OauthError extends Exception {
 	 * authorization code using this method. For instance, this error type is
 	 * "unsupported_response_type".
 	 * 
-	 * @author Yoichiro Tanaka
 	 *
 	 */
-	public static class UnsupportedResponseType extends OauthError {
+	public static class UnsupportedResponseType extends OAuthError {
 
 		/**
 		 * Initialize this instance. The HTTP status code is set as 400.
@@ -246,10 +239,9 @@ public abstract class OauthError extends Exception {
 	 * another client. For instance, this error type is
 	 * "invalid_grant".
 	 * 
-	 * @author yoichiro
 	 *
 	 */
-	public static class InvalidGrant extends OauthError {
+	public static class InvalidGrant extends OAuthError {
 
 		/**
 		 * Initialize this instance. The HTTP status code is set as 401.
@@ -275,10 +267,9 @@ public abstract class OauthError extends Exception {
 	 * authorization server. For instance, this error type is
 	 * "unsupported_grant_type".
 	 * 
-	 * @author Yoichiro Tanaka
 	 *
 	 */
-	public static class UnsupportedGrantType extends OauthError {
+	public static class UnsupportedGrantType extends OAuthError {
 
 		/**
 		 * Initialize this instance. The HTTP status code is set as 400.
@@ -304,10 +295,9 @@ public abstract class OauthError extends Exception {
 	 * exceeds the scope granted by the resource owner. For instance, this
 	 * error type is "invalid_scope".
 	 * 
-	 * @author Yoichiro Tanaka
 	 *
 	 */
-	public static class InvalidScope extends OauthError {
+	public static class InvalidScope extends OAuthError {
 
 		/**
 		 * Initialize this instance. The HTTP status code is set as 401.
@@ -332,10 +322,9 @@ public abstract class OauthError extends Exception {
 	 * This means that the access token passed to the API's endpoint is invalid.
 	 * For instance, this error type is "invalid_token".
 	 * 
-	 * @author Yoichiro Tanaka
 	 *
 	 */
-	public static class InvalidToken extends OauthError {
+	public static class InvalidToken extends OAuthError {
 
 		/**
 		 * Initialize this instance. The HTTP status code is set as 401.
@@ -360,10 +349,9 @@ public abstract class OauthError extends Exception {
 	 * This means that the access token passed to the API's endpoint has
 	 * already been expired. For instance, this error type is "invalid_token".
 	 * 
-	 * @author Yoichiro Tanaka
 	 *
 	 */
-	public static class ExpiredToken extends OauthError {
+	public static class ExpiredToken extends OAuthError {
 
 		/**
 		 * Initialize this instance. The HTTP status code is set as 401.
@@ -387,10 +375,9 @@ public abstract class OauthError extends Exception {
 	 * This means that the specified scope is insufficient. For instance, this
 	 * error type is "insufficient_scope".
 	 * 
-	 * @author Yoichiro Tanaka
-	 *
+	  *
 	 */
-	public static class InsufficientScope extends OauthError {
+	public static class InsufficientScope extends OAuthError {
 
 		/**
 		 * Initialize this instance. The HTTP status code is set as 401.

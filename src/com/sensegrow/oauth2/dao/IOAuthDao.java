@@ -4,12 +4,12 @@ import com.sensegrow.oauth2.models.AccessToken;
 import com.sensegrow.oauth2.models.ClientCredential;
 import com.sensegrow.oauth2.models.AuthorizationCode;
 
-public interface IDataHandler {
+public interface IOAuthDao {
 
-	public boolean validateClient(String clientId, String clientSecret,
+	public abstract boolean validateClient(String clientId, String clientSecret,
 			String grantType);
 
-	public abstract AuthorizationCode createOrUpdateAuthInfo(String clientId,
+	public abstract AuthorizationCode createOrUpdateAuthorizationCode(String clientId,
 			Long userId, String scope);
 
 	public abstract AccessToken createOrUpdateAccessToken(AuthorizationCode authInfo);
@@ -21,9 +21,6 @@ public interface IDataHandler {
 	public abstract String getClientUserId(String clientId, String clientSecret);
 
 	public abstract boolean validateClientByClientId(String clientId);
-
-	public abstract boolean validateApp(String clientId, String clientSecret,
-			String grantType);
 
 	public abstract ClientCredential findAppByClientId(String clientId);
 

@@ -7,7 +7,7 @@ public class AccessToken {
 
 	private Long id;
 	private String access_token;
-	private Long auth_info_id;
+	private Long authorization_code_id;
 	private Long expires_in;
 	private Date created_at;
 	private Date updated_at;
@@ -23,20 +23,20 @@ public class AccessToken {
 		this.id = id;
 	}
 
-	public String getAccessToken() {
+	public String getToken() {
 		return access_token;
 	}
 
-	public void setAaccessToken(String accessToken) {
+	public void setToken(String accessToken) {
 		this.access_token = accessToken;
 	}
-
-	public Long getAuthInfoId() {
-		return auth_info_id;
+	
+	public Long getAuthorizationCodeId() {
+		return authorization_code_id;
 	}
 
-	public void setAuthInfoId(Long authInfoId) {
-		this.auth_info_id = authInfoId;
+	public void setAuthInfoId(Long authorizationCodeId) {
+		this.authorization_code_id = authorizationCodeId;
 	}
 
 	public Long getExpiresIn() {
