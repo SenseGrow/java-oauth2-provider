@@ -2,11 +2,37 @@ package com.sensegrow.oauth2.request;
 
 import java.util.Map;
 
-public interface Request {
+public abstract class Request {
+
+	protected String clientId;
+	protected String clientSecret;
+
+	public void setClientCredential(String clientId, String clientSecret) {
+		this.clientId = clientId;
+		this.clientSecret = clientSecret;
+	}
+	public String getclientId(){
+		return clientId;
+	}
+	
+	public String getclientSecret(){
+		return clientSecret;
+	}
+	
+	
+	public String getuserId(){
+		return null;
+	}
+
+	/**
+	 * redirect to a url with param.
+	 */
+	public abstract Request redirectTOUrl(String url, String param);
+	
 	/**
 	 * @return The request object.
 	 */
-	public Request getRequest();
+	public abstract Request getRequest();
 
 	/**
 	 * Retrieve the parameter value specified by the parameter name from the
@@ -16,7 +42,7 @@ public interface Request {
 	 *            The parameter name.
 	 * @return The value against the name.
 	 */
-	public String getParameter(String name);
+	public abstract String getParameter(String name);
 
 	/**
 	 * Retrieve all parameter names and values from the request as a Map
@@ -24,7 +50,7 @@ public interface Request {
 	 * 
 	 * @return The map instance which has all parameter names and values.
 	 */
-	public Map<String, String> getParameterMap();
+	public abstract Map<String, String> getParameterMap();
 
 	/**
 	 * Retrieve the request header value from the request.
@@ -33,5 +59,5 @@ public interface Request {
 	 *            The header's name.
 	 * @return The value against the name.
 	 */
-	public String getHeader(String name);
+	public abstract String getHeader(String name);
 }

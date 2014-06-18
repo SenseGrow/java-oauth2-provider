@@ -10,7 +10,7 @@ public interface IOAuthDao {
 			String grantType);
 
 	public abstract AuthorizationCode createOrUpdateAuthorizationCode(String clientId,
-			Long userId, String scope);
+			Long userId, String redirecUri,String scope);
 
 	public abstract AccessToken createOrUpdateAccessToken(AuthorizationCode authInfo);
 

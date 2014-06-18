@@ -11,7 +11,6 @@ public class AuthorizationCode {
 	private String redirect_uri;
 	private Long user_id;
 	private String scope;
-	private String refresh_token;
 	private Date created_at;
 	private Date updated_at;
 
@@ -67,11 +66,4 @@ public class AuthorizationCode {
 		this.scope = scope;
 	}
 
-	public String getRefreshToken() {
-		return refresh_token;
-	}
-
-	public void setRefreshToken(String refreshToken) {
-		this.refresh_token = refreshToken;
-	}
 }

@@ -1,6 +1,10 @@
 package com.sensegrow.oauth2.grant;
 
-public class ImplicitGrant implements IGrant{
+import java.util.Map;
+
+import com.sensegrow.oauth2.models.AccessToken;
+
+public class ImplicitGrant extends AbstractGrant {
 
 	@Override
 	public String getGrantType() {
@@ -9,43 +13,7 @@ public class ImplicitGrant implements IGrant{
 	}
 
 	@Override
-	public String getAccessToken() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setExpiresIn(Long expiresIn) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Long getExpiresIn() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setRefreshToken(String refreshToken) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public String getRefreshToken() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setScope(String scope) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public String getScope() {
+	public AccessToken getAccessToken() {
 		// TODO Auto-generated method stub
 		return null;
 	}

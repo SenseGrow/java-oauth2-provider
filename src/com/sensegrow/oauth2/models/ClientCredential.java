@@ -17,10 +17,6 @@ public class ClientCredential {
 		this.id = id;
 	}
 
-	public ClientCredential(String clientId) {
-		this.client_id = clientId;
-	}
-	
 	public Long getId() {
 		return id;
 	}

@@ -9,6 +9,7 @@ public class AccessToken {
 	private String access_token;
 	private Long authorization_code_id;
 	private Long expires_in;
+	private String refresh_token;
 	private Date created_at;
 	private Date updated_at;
 
@@ -39,6 +40,14 @@ public class AccessToken {
 		this.authorization_code_id = authorizationCodeId;
 	}
 
+	public String getRefreshToken() {
+		return refresh_token;
+	}
+
+	public void setRefreshToken(String refreshToken) {
+		this.refresh_token = refreshToken;
+	}
+	
 	public Long getExpiresIn() {
 		return expires_in;
 	}
