@@ -4,7 +4,7 @@ import java.util.Map;
 
 import com.sensegrow.oauth2.models.AccessToken;
 import com.sensegrow.oauth2.models.AuthorizationCode;
-import com.sensegrow.oauth2.request.Request;
+import com.sensegrow.oauth2.request.OAuthRequest;
 
 public abstract class AbstractGrant {
 
@@ -32,13 +32,11 @@ public abstract class AbstractGrant {
 		return null;
 	}
 
-	public void getCodeResponse() {
-
-	}
-
-	public Map getTokenResponse() {
+	public String getCodeResponse() {
 		return null;
 	}
+
+	public abstract Map getTokenResponse();
 
 	/**
 	 * Retrieve the access token.

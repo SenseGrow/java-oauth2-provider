@@ -13,8 +13,16 @@ public class AccessToken {
 	private Date created_at;
 	private Date updated_at;
 
-	public AccessToken(Long id) {
+	public AccessToken() {
 	}
+	
+	public AccessToken(Long authorizationCodeId) {
+		this.authorization_code_id = authorizationCodeId;
+	}
+	
+//	public AccessToken(Long id) {
+//		this.id = id;
+//	}
 
 	public Long getId() {
 		return id;
@@ -24,19 +32,19 @@ public class AccessToken {
 		this.id = id;
 	}
 
-	public String getToken() {
-		return access_token;
+	public String getAccessToken() {
+		return "asdsafsdfsdf";
 	}
 
-	public void setToken(String accessToken) {
+	public void setAccessToken(String accessToken) {
 		this.access_token = accessToken;
 	}
 	
-	public Long getAuthorizationCodeId() {
+	public Long getAuthCodeId() {
 		return authorization_code_id;
 	}
-
-	public void setAuthInfoId(Long authorizationCodeId) {
+	
+	public void setAuthCodeId(Long authorizationCodeId) {
 		this.authorization_code_id = authorizationCodeId;
 	}
 
@@ -49,7 +57,8 @@ public class AccessToken {
 	}
 	
 	public Long getExpiresIn() {
-		return expires_in;
+		long expiresIn = 2;
+		return expiresIn;
 	}
 
 	public void setExpiresIn(Long expiresIn) {

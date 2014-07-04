@@ -13,6 +13,9 @@ public class ClientCredential {
 	private Date created_at;
 	private Date updated_at;
 
+	public ClientCredential() {
+	}
+	
 	public ClientCredential(Long id) {
 		this.id = id;
 	}

@@ -18,4 +18,10 @@ public class ImplicitGrant extends AbstractGrant {
 		return null;
 	}
 
+	@Override
+	public Map getTokenResponse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -2,7 +2,9 @@ package com.sensegrow.oauth2.request;
 
 import java.util.Map;
 
-public abstract class Request {
+import play.mvc.Result;
+
+public abstract class OAuthRequest {
 
 	protected String clientId;
 	protected String clientSecret;
@@ -27,12 +29,12 @@ public abstract class Request {
 	/**
 	 * redirect to a url with param.
 	 */
-	public abstract Request redirectTOUrl(String url, String param);
+	public abstract String getRedirectUrl(String url, String param);
 	
 	/**
 	 * @return The request object.
 	 */
-	public abstract Request getRequest();
+	public abstract OAuthRequest getRequest();
 
 	/**
 	 * Retrieve the parameter value specified by the parameter name from the
@@ -41,6 +43,7 @@ public abstract class Request {
 	 * @param name
 	 *            The parameter name.
 	 * @return The value against the name.
+	 * @throws ExecutionException 
 	 */
 	public abstract String getParameter(String name);
 

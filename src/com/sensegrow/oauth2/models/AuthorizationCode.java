@@ -14,10 +14,20 @@ public class AuthorizationCode {
 	private Date created_at;
 	private Date updated_at;
 
+	public AuthorizationCode() {
+	}
+	
 	public AuthorizationCode(Long id) {
 		this.id = id;
 	}
 
+	public AuthorizationCode(String clientId,Long userId, String redirecUri, String scope){
+		this.client_id = clientId;
+		this.user_id = userId;
+		this.redirect_uri = redirecUri;
+		this.scope = scope;
+	}
+	
 	public Long getId() {
 		return id;
 	}
