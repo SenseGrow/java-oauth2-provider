@@ -17,7 +17,7 @@ The library has been based on draft-31 of the standard. The library will support
 <h1>Installation</h1>
 TODO
 
-<h1>Usage</h1>
+<h1>Usage with Servlet</h1>
 TODO
 
 <h1>Usage with Play Framework</h1>
