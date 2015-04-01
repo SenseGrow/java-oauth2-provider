@@ -21,7 +21,14 @@ TODO
 TODO
 
 <h1>Usage with Play Framework</h1>
-TODO
+First you need to include this library in your project.
+Then you need to implement all model in your project. 
+Then you need to implement com.sensegrow.oauth2provider.request.OAuthRequest in your project.
+Then you need to create an OauthController which contains two methods 
+1. auth(String client_id, String client_secret,String redirect_uri, String response_type, String email,	Long user_id) : for authorization_token
+
+2.accessToken() : for access_token. 
+
 
 <h1>Examples</h1>
 TODO
